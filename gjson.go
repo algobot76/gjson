@@ -1,7 +1,10 @@
 // Package gjson provides searching for json strings.
 package gjson
 
-import "strconv"
+import (
+	"fmt"
+	"strconv"
+)
 
 // Type is Result type
 type Type byte
@@ -489,7 +492,7 @@ func unescape(json string) string { //, error) {
 						code += (int(json[j]) - 'a' + 10) << uint(12-(j-i)*4)
 					}
 				}
-				str = append(str, []byte(string(code))...)
+				str = append(str, []byte(fmt.Sprint(code))...)
 				i += 3 // only 3 because we will increment on the for-loop
 			}
 		}
