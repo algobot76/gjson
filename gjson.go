@@ -146,6 +146,7 @@ func Get(json string, path string) Result {
 		if path[i] == '.' {
 			parts = append(parts, path[s:i])
 			wilds = append(wilds, wild)
+			// reset wild flag
 			if wild {
 				wild = false
 			}
